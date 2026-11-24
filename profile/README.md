@@ -17,7 +17,7 @@ no benchmark result and no model file exists.
 | Name | What it is | State |
 |---|---|---|
 | [Penelope](https://github.com/LaertesAI/Penelope) | A coding agent for the terminal, written in Rust. Searches and long tool output go to a cheaper model. A filter masks secrets before any model reads them. | public, version 0.10.0, alpha, MIT |
-| [ScreenCodec MCP](https://github.com/potionodevil/ScreenCodec) | An MCP server that hands a web browser to a model as text. No screenshot reaches the model. | public, MIT |
+| ScreenCodec MCP | An MCP server that hands a web browser to a model as text. No screenshot reaches the model. | private, not published |
 | Panto Engine | The training engine: one loop with six stages from data to an error report. | plan, no code yet |
 
 Numbers that are measured:
@@ -30,7 +30,7 @@ Numbers that are measured:
 | ScreenCodec MCP | Tokens per page in level `lean` | 224, against 1,105 to 2,691 for one screenshot |
 | ScreenCodec MCP | Prompt injection attacks that succeeded after the click check | 0 of 96 |
 
-Each number comes from the README of its repository, where the run behind it is named.
+The Penelope numbers come from its README, where the run behind each one is named. The ScreenCodec numbers come from its own test runs.
 
 ## Model families
 
@@ -48,7 +48,7 @@ Every family has one job. Penelope already has a place for each of them, and a s
 | <img src="https://raw.githubusercontent.com/LaertesAI/.github/main/profile/lockups/proteus.png" alt="Proteus: ML engineering and MoE conversion" width="250"> | not in use | planned |
 
 Every family is planned in three sizes: `[Family] [Version] Mini`, `[Family] [Version]` and `[Family] [Version] Pro`.
-The first training runs happen on one PC with an RTX 3050 and 6 GB.
+The first training runs happen on one PC with 6 GB of graphics memory.
 
 ## Rules for every number
 
