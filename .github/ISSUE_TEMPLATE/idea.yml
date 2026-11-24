@@ -1,0 +1,49 @@
+name: Idea
+description: A tool, a command, a setting or a provider that Penelope lacks.
+title: "Idea: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        `docs/ROADMAP.md` and `docs/PLAN.md` list the planned parts. Name the row if your idea is one of them.
+  - type: textarea
+    id: problem
+    attributes:
+      label: The task that fails today
+      description: One concrete task, with the request or the command you tried.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What Penelope should do. For a tool, name its input, its output and the question it asks the person.
+    validations:
+      required: true
+  - type: dropdown
+    id: part
+    attributes:
+      label: Part
+      options:
+        - tool of the main model
+        - scout and other helpers
+        - memory map and lessons
+        - privacy filter
+        - full screen interface
+        - providers and models
+        - plugins and MCP
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: measure
+    attributes:
+      label: How to measure it
+      description: The number that shows the part works, for example tokens, tool calls, seconds or solved tasks.
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Work
+      options:
+        - label: I would write the change myself after a yes.

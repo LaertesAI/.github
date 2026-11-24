@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a weakness in private
+    url: https://github.com/LaertesAI/.github/blob/main/SECURITY.md
+    about: A leaked secret or a skipped question never goes into a public issue.
+  - name: Planned parts and known limits
+    url: https://github.com/LaertesAI/Penelope/blob/main/docs/ROADMAP.md
+    about: Read this list before you open an issue.

@@ -1,0 +1,83 @@
+name: Bug report
+description: Penelope does something wrong, stops, or shows a wrong text.
+title: "Bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Replace every real key, token and password with a made-up value before you paste a text.
+        A weakness that leaks a secret or skips a question goes to a private report, see SECURITY.md.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The field `version` in `cli/Cargo.toml`, or the commit you built from.
+      placeholder: "0.10.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: model
+    attributes:
+      label: Kind of the main model
+      description: The field `main.kind` in `.penelope/config.json`.
+      options:
+        - claude-cli
+        - openai
+        - anthropic
+    validations:
+      required: true
+  - type: input
+    id: provider
+    attributes:
+      label: Provider and model
+      description: The name from `penelope providers` and the model name.
+      placeholder: "ollama, qwen3:8b"
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where it happened
+      options:
+        - full screen interface
+        - "plain chat (penelope chat --plain)"
+        - "one command (penelope ask, run, scout, search, ...)"
+        - "MCP server (penelope mcp)"
+        - build or tests
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps
+      description: The smallest steps that show the problem, with the request or the command as you typed it.
+      placeholder: |
+        1. penelope setup --here
+        2. penelope ask "..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected
+      description: What should have happened, in one or two sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened
+      description: The text on the screen or the error line.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Output of penelope doctor
+      description: It names variables and never prints a key.
+      render: text
+  - type: input
+    id: system
+    attributes:
+      label: System and terminal
+      placeholder: "Linux 6.12, kitty 0.39, 124 columns and 40 rows"
