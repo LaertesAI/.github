@@ -50,6 +50,21 @@ Every family has one job. Penelope already has a place for each of them, and a s
 Every family is planned in three sizes: `[Family] [Version] Mini`, `[Family] [Version]` and `[Family] [Version] Pro`.
 The first training runs happen on one PC with 6 GB of graphics memory.
 
+## Research
+
+Four questions from November 2026. Each row names what was measured or calculated and what stays open. The papers and
+prototypes are private.
+
+| Question | Finding | Open |
+|---|---|---|
+| Can a model read a screen without a vision model? | ScreenCodec writes the screen as text: 474 tokens for a full frame, 10 to 40 tokens for a change. At 2 frames per second a context of 200,000 tokens lasts 59 minutes. With pictures it lasts 37 to 110 seconds. In a blind test with 55 questions the text reached 95.5 percent and pictures 99.1 percent. | The 8 test sequences were synthetic. On 2 new web pages the precision of the detection fell to 0.68. Real desktops are untested. |
+| Can a text model hear music? | HörSchrift writes audio as text with classic signal processing: key, chords, melody, bass, drums and events with their time. It costs 31 tokens per second in the median. A text model answered 44 fact questions 92.0 percent right. A control without input reached 58.0 percent. | The audio, the codec and the questions came from one hand. No comparison with an audio model exists. |
+| Can 120 trillion parameters run on one PC? | A dense model of that size reads 62 TB per token. That takes 37 minutes per token on a gaming PC of 2026. The design Tiered Sparse Giant reads 2.1 MB from the SSD per token and reaches 3.4 to 7.8 tokens per second by calculation. | No such model is trained. The quality is unmeasured, because 75 percent of the parameters lie in lookup tables. |
+| Which hardware beats the memory limit? | At batch 1 a language model computes 1 to 4 operations per byte it reads. A GPU needs 117 to 1,174 operations per byte for full load, so its arithmetic units stand idle over 96 percent of the time. Of 7 hardware classes none gives a single user more bandwidth per dollar than a GPU in 2026. | The own design ROSA wins by calculation only, and only for models of 128 to 512 GB. |
+
+All four questions end at the same limit: the bytes a machine moves per token. That limit is the reason for small
+models with one job each.
+
 ## Rules for every number
 
 1. A result names its run: the model, the test set, the script, the hardware, the date and the seed.
